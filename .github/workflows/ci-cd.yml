@@ -21,6 +21,7 @@ jobs:
 
       - name: Build
         run: npm run build
+        run : ls -la
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -36,7 +37,6 @@ jobs:
 
         run: |
           echo "Deploying to S3 bucket: $S3_BUCKET"
-          aws s3 sync */ s3://my-static-website-bucket-135 --delete
           aws s3 sync build/ s3://my-static-website-bucket-135 --delete
 
 
