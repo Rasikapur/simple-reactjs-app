@@ -36,7 +36,7 @@ jobs:
 
         run: |
           echo "Deploying to S3 bucket: $S3_BUCKET"
-          aws s3 sync dist/ s3://my-static-website-bucket-135
+          aws s3 sync build//my-static-website-bucket-135
 
       # - name: Optional CloudFront invalidation
       #   if: ${{ env.CLOUDFRONT_DISTRIBUTION_ID != 'EBPCD8XMCD7PY' }}
