@@ -34,8 +34,7 @@ jobs:
         env:
          S3_BUCKET: my-static-website-bucket-135
 
-        run: |
-          echo "Deploying to S3 bucket: $S3_BUCKET"
+        run:
           aws s3 sync build/ s3://my-static-website-bucket-135 --delete
 
 
